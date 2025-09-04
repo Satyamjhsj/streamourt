@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamOurTV - Your Ultimate TV Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            min-height: 100vh;
+            color: #e2e8f0;
+        }
+        
+        .channel-logo {
+            transition: transform 0.3s ease;
+        }
+        
+        .channel-logo:hover {
+            transform: scale(1.1);
+        }
+        
+        .program-card {
+            transition: all 0.3s ease;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #3b82f6;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-button:hover:after {
+            transform: translateX(0);
+        }
+        
+        .hero-pattern {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%231e293b" width="100" height="100"/><path fill="%233b82f6" opacity="0.2" d="M0 0h100v100H0z"/><path fill="%233b82f6" opacity="0.2" d="M0 0h50v50H0z"/></svg>');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header with Navigation -->
+    <header class="bg-gray-900 border-b border-blue-500 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-tv text-blue-500 text-2xl"></i>
+                    <span class="text-xl font-bold text-white">StreamOurTV</span>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="nav-button text-white px-4 py-2 rounded-lg font-medium" id="homeBtn">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    <a href="#guide" class="nav-button text-white px-4 py-2 rounded-lg font-medium" id="guideBtn">
+                        <i class="fas fa-list mr-2"></i>Guide
+                    </a>
+                    <a href="mailto:support@streamourtv.site" class="nav-button text-white px-4 py-2 rounded-lg font-medium">
+                        <i class="fas fa-life-ring mr-2"></i>Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Your Ultimate <span class="text-blue-500">TV Guide</span> for USA</h1>
+                    <p class="text-xl text-gray-300 mb-6">Never miss your favorite shows again. Find all TV listings in one place with our comprehensive guide.</p>
+                    <a href="#guide" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center transition duration-300">
+                        <span>Explore TV Guide</span>
+                        <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-blue-600 rounded-xl opacity-20 blur"></div>
+                        <div class="relative bg-gray-800 p-6 rounded-xl shadow-xl">
+                            <div class="flex justify-between items-center mb-4">
+                                <div class="flex items-center">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                                    <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                </div>
+                                <div class="text-sm text-gray-400">Live TV</div>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="TV Show" class="rounded-lg shadow-lg">
+                            <div class="mt-4 flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-white font-bold">The Crown</h3>
+                                    <p class="text-gray-400 text-sm">Netflix • Drama</p>
+                                </div>
+                                <div class="text-blue-500">
+                                    <i class="fas fa-play-circle text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TV Guide Section -->
+    <section id="guide" class="py-16 bg-slate-800 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-white mb-2 text-center">TV Guide</h2>
+            <p class="text-gray-400 text-center mb-10">Browse through channels and programs</p>
+            
+            <!-- Time Navigation -->
+            <div class="flex overflow-x-auto pb-4 mb-8">
+                <div class="flex space-x-4">
+                    <div class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium">Now</div>
+                    <div class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium cursor-pointer">8:00 PM</div>
+                    <div class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium cursor-pointer">9:00 PM</div>
+                    <div class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium cursor-pointer">10:00 PM</div>
+                    <div class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-medium cursor-pointer">11:00 PM</div>
+                </div>
+            </div>
+            
+            <!-- Channels and Programs -->
+            <div class="bg-gray-900 rounded-xl shadow-xl overflow-hidden">
+                <!-- Channel Row -->
+                <div class="grid grid-cols-12 gap-4 p-4 border-b border-gray-800">
+                    <div class="col-span-2 font-medium text-gray-400">Channel</div>
+                    <div class="col-span-10">
+                        <div class="grid grid-cols-5 gap-4 text-center">
+                            <div class="font-medium text-gray-400">6:00 PM</div>
+                            <div class="font-medium text-gray-400">7:00 PM</div>
+                            <div class="font-medium text-gray-400">8:00 PM</div>
+                            <div class="font-medium text-gray-400">9:00 PM</div>
+                            <div class="font-medium text-gray-400">10:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NBC -->
+                <div class="grid grid-cols-12 gap-4 p-4 border-b border-gray-800 hover:bg-gray-800 transition duration-300">
+                    <div class="col-span-2 flex items-center">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3 channel-logo">
+                            <span class="font-bold text-white">NBC</span>
+                        </div>
+                        <span class="text-white">NBC</span>
+                    </div>
+                    <div class="col-span-10">
+                        <div class="grid grid-cols-5 gap-4">
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">News</h4>
+                                <p class="text-gray-400 text-xs">6:00-7:00 PM</p>
+                            </div>
+                            <div class="program-card bg-blue-900 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Sports</h4>
+                                <p class="text-gray-400 text-xs">7:00-8:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Comedy</h4>
+                                <p class="text-gray-400 text-xs">8:00-9:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Drama</h4>
+                                <p class="text-gray-400 text-xs">9:00-10:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Late Show</h4>
+                                <p class="text-gray-400 text-xs">10:00-11:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ABC -->
+                <div class="grid grid-cols-12 gap-4 p-4 border-b border-gray-800 hover:bg-gray-800 transition duration-300">
+                    <div class="col-span-2 flex items-center">
+                        <div class="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center mr-3 channel-logo">
+                            <span class="font-bold text-white">ABC</span>
+                        </div>
+                        <span class="text-white">ABC</span>
+                    </div>
+                    <div class="col-span-10">
+                        <div class="grid grid-cols-5 gap-4">
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Talk Show</h4>
+                                <p class="text-gray-400 text-xs">6:00-7:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Reality</h4>
+                                <p class="text-gray-400 text-xs">7:00-8:00 PM</p>
+                            </div>
+                            <div class="program-card bg-red-900 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">News</h4>
+                                <p class="text-gray-400 text-xs">8:00-9:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Movie</h4>
+                                <p class="text-gray-400 text-xs">9:00-11:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Movie Cont.</h4>
+                                <p class="text-gray-400 text-xs">10:00-11:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- HBO -->
+                <div class="grid grid-cols-12 gap-4 p-4 border-b border-gray-800 hover:bg-gray-800 transition duration-300">
+                    <div class="col-span-2 flex items-center">
+                        <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3 channel-logo">
+                            <span class="font-bold text-white">HBO</span>
+                        </div>
+                        <span class="text-white">HBO</span>
+                    </div>
+                    <div class="col-span-10">
+                        <div class="grid grid-cols-5 gap-4">
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Documentary</h4>
+                                <p class="text-gray-400 text-xs">6:00-7:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Series</h4>
+                                <p class="text-gray-400 text-xs">7:00-8:00 PM</p>
+                            </div>
+                            <div class="program-card bg-purple-900 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Movie Premiere</h4>
+                                <p class="text-gray-400 text-xs">8:00-10:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Series</h4>
+                                <p class="text-gray-400 text-xs">10:00-11:00 PM</p>
+                            </div>
+                            <div class="program-card bg-slate-700 p-3 rounded-lg cursor-pointer">
+                                <h4 class="text-white font-medium text-sm">Talk Show</h4>
+                                <p class="text-gray-400 text-xs">11:00-12:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="py-16 bg-slate-900 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-white mb-2 text-center">How to Use Our TV Guide</h2>
+            <p class="text-gray-400 text-center mb-10">Follow these simple steps to get the most out of our service</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xl mb-4">
+                        1
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-2">Browse Channels</h3>
+                    <p class="text-gray-400">Scroll through our list of available channels to find your favorites.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xl mb-4">
+                        2
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-2">Check Schedule</h3>
+                    <p class="text-gray-400">View the program schedule for different time slots throughout the day.</p>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-xl mb-4">
+                        3
+                    </div>
+                    <h3 class="text-white text-xl font-bold mb-2">Set Reminders</h3>
+                    <p class="text-gray-400">Click on any program to set a reminder so you never miss your favorite show.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-8 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-tv text-blue-500 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-white">StreamOurTV</span>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+                
+                <div class="mt-4 md:mt-0">
+                    <a href="mailto:support@streamourtv.site" class="text-gray-400 hover:text-white transition duration-300">
+                        support@streamourtv.site
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-500">No copyright intended. This is a demo website for educational purposes.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for navigation
+        document.getElementById('homeBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        document.getElementById('guideBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('guide').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Add active class to navigation buttons
+        const navButtons = document.querySelectorAll('.nav-button');
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                navButtons.forEach(btn => btn.classList.remove('text-blue-500'));
+                this.classList.add('text-blue-500');
+            });
+        });
+    </script>
+</body>
+</html>

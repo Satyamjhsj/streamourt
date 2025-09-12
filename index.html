@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV Activation & Reviews - USA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-cyan-100 to-green-200 text-gray-900">
+  <header class="bg-teal-700 text-white py-10 shadow-xl">
+    <div class="container mx-auto text-center">
+      <h1 class="text-5xl font-extrabold tracking-wide">TV Activation & Reviews</h1>
+      <p class="text-xl mt-3 font-light">Fast Setup & Genuine Reviews in the USA</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto py-14 px-6">
+    <!-- Activation Instructions -->
+    <section class="bg-white rounded-3xl shadow-2xl p-10 max-w-4xl mx-auto border border-green-200 mb-14">
+      <h2 class="text-4xl font-bold text-center mb-8 text-teal-700">How to Activate Your TV</h2>
+      <ol class="list-decimal list-inside space-y-4 text-lg text-gray-800">
+        <li>Power on your TV using the remote or power button.</li>
+        <li>Select “English” or your preferred language.</li>
+        <li>Set region as United States (USA).</li>
+        <li>Connect to a secure Wi-Fi network.</li>
+        <li>Accept Terms & Conditions.</li>
+        <li>Install any available system updates.</li>
+        <li>Note the activation code displayed.</li>
+        <li>Visit <strong>www.tvsetup.com/activate</strong> on another device.</li>
+        <li>Enter the activation code.</li>
+        <li>Complete the steps shown to finish setup.</li>
+        <li>Sign in with your provider or create a new account.</li>
+        <li>Customize your preferences and enjoy!</li>
+      </ol>
+      <div class="text-center mt-10">
+        <button id="helpBtn" class="bg-gradient-to-r from-cyan-500 to-green-500 hover:from-cyan-600 hover:to-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md transition duration-300">Need Help?</button>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="bg-white rounded-3xl shadow-2xl p-10 max-w-5xl mx-auto border border-cyan-200">
+      <h2 class="text-4xl font-bold text-center mb-10 text-green-600">Top TV Reviews in USA</h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <a href="https://www.bestbuy.com/site/samsung-65-class-qn90c-neo-qled-4k-smart-tizen-tv/6537366.p" target="_blank" class="block p-6 bg-green-50 rounded-xl shadow hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-bold mb-2 text-teal-700">Samsung QN90C Neo QLED</h3>
+          <p class="text-gray-700">Top 4K TV with incredible brightness and contrast. Great for movies, sports, and gaming.</p>
+        </a>
+        <a href="https://www.bestbuy.com/site/lg-65-class-c3-series-oled-4k-uhd-smart-webos-tv/6537418.p" target="_blank" class="block p-6 bg-green-50 rounded-xl shadow hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-bold mb-2 text-teal-700">LG C3 OLED</h3>
+          <p class="text-gray-700">Superb OLED display with stunning contrast, perfect for cinematic viewing and gamers.</p>
+        </a>
+        <a href="https://www.bestbuy.com/site/tcl-65-class-qm8-qled-4k-smart-tv-with-google-tv/6547495.p" target="_blank" class="block p-6 bg-green-50 rounded-xl shadow hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-bold mb-2 text-teal-700">TCL QM8 4K QLED</h3>
+          <p class="text-gray-700">Affordable and powerful. Delivers vivid colors and deep blacks with Google TV features.</p>
+        </a>
+        <a href="https://www.bestbuy.com/site/sony-65-class-bravia-xr-a80l-oled-4k-uhd-smart-google-tv/6538056.p" target="_blank" class="block p-6 bg-green-50 rounded-xl shadow hover:shadow-xl transition duration-300">
+          <h3 class="text-2xl font-bold mb-2 text-teal-700">Sony A80L OLED</h3>
+          <p class="text-gray-700">Stunning OLED TV with powerful XR processing. Premium sound and visual experience.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Help Modal -->
+  <div id="helpModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50">
+    <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-md w-full text-center border border-cyan-300">
+      <h3 class="text-2xl font-bold text-teal-700 mb-4">We're Here to Help</h3>
+      <p class="text-gray-700 mb-4">
+        For any questions, email us at:<br />
+        <a href="mailto:ourtvsupport@mail.com" class="text-teal-600 underline">ourtvsupport@mail.com</a>
+      </p>
+      <button id="closeModal" class="mt-4 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition duration-300">Close</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-teal-700 text-white py-6 text-center mt-20 text-sm">
+    <p>&copy; 2025 OurTV Guides. All content provided is for informational purposes only.</p>
+    <p class="mt-1">Contact: <a href="mailto:ourtvsupport@mail.com" class="underline">ourtvsupport@mail.com</a></p>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const helpBtn = document.getElementById('helpBtn');
+    const helpModal = document.getElementById('helpModal');
+    const closeModal = document.getElementById('closeModal');
+
+    helpBtn.addEventListener('click', () => {
+      helpModal.classList.remove('hidden');
+    });
+
+    closeModal.addEventListener('click', () => {
+      helpModal.classList.add('hidden');
+    });
+  </script>
+</body>
+
+</html>

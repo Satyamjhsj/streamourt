@@ -1,109 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StreamOurTV - Activation Guide</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script>
-    function toggleFAQ(id) {
-      const el = document.getElementById(id);
-      el.classList.toggle('hidden');
+  <title>StreamOurTV – Independent TV Setup Guides</title>
+  <meta name="description" content="Independent resource for TV activation, setup, and troubleshooting guides. Not affiliated with any brand." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "StreamOurTV",
+    "url": "https://streamourtv.site/",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "support@streamourtv.site",
+      "contactType": "Customer Support"
     }
+  }
   </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 px-6 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to StreamOurTV</h1>
+    <p class="max-w-2xl mx-auto text-lg mb-6">Your independent and transparent resource for TV setup, activation, and troubleshooting guides. We are not affiliated with any official TV brand or service provider.</p>
+    <a href="#contact" class="inline-block bg-white text-blue-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100 transition">Contact Support</a>
+  </section>
 
-<body class="bg-gray-100 font-sans">
-  <!-- Navbar -->
-  <nav class="bg-purple-700 text-white shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold">StreamOurTV</h1>
-      <ul class="flex space-x-6">
-        <li><a href="#home" class="hover:underline">Home</a></li>
-        <li><a href="#guide" class="hover:underline">Guide</a></li>
-        <li><a href="#faq" class="hover:underline">FAQ</a></li>
-        <li><a href="#privacy" class="hover:underline">Privacy Policy</a></li>
-        <li><a href="#contact" class="hover:underline">Contact</a></li>
-      </ul>
+  <!-- Features Section -->
+  <section class="py-16 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Why Choose Us?</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-3">Independent Guides</h3>
+        <p>Clear and unbiased setup and troubleshooting instructions without any hidden agenda.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-3">Transparent Information</h3>
+        <p>We clearly disclose that StreamOurTV is not an official brand or partner of any TV provider.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition">
+        <h3 class="font-semibold text-xl mb-3">Customer Support</h3>
+        <p>Reach out to us via email for any questions. We are committed to user trust and safety.</p>
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <!-- Hero / Header -->
-  <header id="home" class="bg-purple-700 text-white p-10 shadow-md text-center">
-    <h2 class="text-3xl font-bold">TV Activation Instructions</h2>
-    <p class="mt-2">Get your TV up and running in minutes with StreamOurTV</p>
-  </header>
-
-  <main class="container mx-auto p-6">
-    <!-- Guide Section -->
-    <section id="guide" class="bg-white rounded-2xl shadow-lg p-6 mb-6">
-      <h2 class="text-2xl font-semibold mb-4">Activation Process</h2>
-      <ol class="list-decimal list-inside space-y-2 text-gray-700">
-        <li>Turn on your TV and ensure it's connected to Wi-Fi.</li>
-        <li>Open the activation screen to get your unique code.</li>
-        <li>On your smartphone or computer, go to the official activation website.</li>
-        <li>Enter the code exactly as shown on your TV screen.</li>
-        <li>Sign in or create an account to complete the activation.</li>
-        <li>Once done, your TV will refresh and display the home screen.</li>
-        <li>Test by opening any app to confirm successful activation.</li>
-      </ol>
-    </section>
-
-    <!-- Troubleshooting -->
-    <section class="bg-white rounded-2xl shadow-lg p-6 mb-6">
-      <h2 class="text-2xl font-semibold mb-4">Troubleshooting</h2>
-      <ul class="list-disc list-inside text-gray-700 space-y-2">
-        <li><strong>No Internet?</strong> Restart your router and reconnect.</li>
-        <li><strong>Invalid Code?</strong> Request a new code on your TV.</li>
-        <li><strong>Website not loading?</strong> Clear your browser cache or switch browsers.</li>
-        <li><strong>Still stuck?</strong> Reach out to our support team below.</li>
-      </ul>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="bg-white rounded-2xl shadow-lg p-6 mb-6">
-      <h2 class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
-      <div class="space-y-4">
-        <div>
-          <button class="text-left w-full font-medium text-purple-700" onclick="toggleFAQ('faq1')">How long does activation take?</button>
-          <p id="faq1" class="text-gray-600 mt-2 hidden">It typically takes less than 5 minutes.</p>
-        </div>
-        <div>
-          <button class="text-left w-full font-medium text-purple-700" onclick="toggleFAQ('faq2')">Can I activate on multiple devices?</button>
-          <p id="faq2" class="text-gray-600 mt-2 hidden">Yes, you can link multiple devices to the same account.</p>
-        </div>
-        <div>
-          <button class="text-left w-full font-medium text-purple-700" onclick="toggleFAQ('faq3')">What if I forget my login?</button>
-          <p id="faq3" class="text-gray-600 mt-2 hidden">Use the "Forgot Password" option on the login page to reset your credentials.</p>
+  <!-- Policies Section with Accordion -->
+  <section class="py-16 px-6 bg-gray-100">
+    <h2 class="text-3xl font-bold text-center mb-10">Our Policies & Disclaimers</h2>
+    <div class="max-w-3xl mx-auto space-y-4">
+      <div class="bg-white rounded-lg shadow">
+        <button class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center toggle-btn">Disclaimer <span>+</span></button>
+        <div class="px-6 pb-4 hidden">
+          <p>StreamOurTV is an independent resource providing TV setup and troubleshooting guides. We are not affiliated with or endorsed by any TV manufacturer, streaming service, or government entity.</p>
         </div>
       </div>
-    </section>
+      <div class="bg-white rounded-lg shadow">
+        <button class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center toggle-btn">Privacy Policy <span>+</span></button>
+        <div class="px-6 pb-4 hidden">
+          <p>We respect your privacy. No personal information is collected beyond what you voluntarily provide via our support email: support@streamourtv.site.</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-lg shadow">
+        <button class="w-full text-left px-6 py-4 font-semibold flex justify-between items-center toggle-btn">Refund Policy <span>+</span></button>
+        <div class="px-6 pb-4 hidden">
+          <p>StreamOurTV does not sell any paid products or services directly. Therefore, no refunds apply. If this changes, clear terms will be added.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Privacy Policy -->
-    <section id="privacy" class="bg-white rounded-2xl shadow-lg p-6 mb-6">
-      <h2 class="text-2xl font-semibold mb-4">Privacy Policy</h2>
-      <p class="text-gray-700 mb-2">
-        At StreamOurTV, we respect your privacy. We do not collect personal information unless you provide it voluntarily through our contact form. 
-        Any information shared is used solely for providing support and is never sold or shared with third parties.
-      </p>
-      <p class="text-gray-700">
-        By using our website, you agree to our terms of use and privacy practices. For any questions, please contact our support team.
-      </p>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="bg-white rounded-2xl shadow-lg p-6">
-      <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
-      <p class="text-gray-700 mb-4">For assistance, reach out to us at:</p>
-      <p class="font-medium text-purple-700">📧 Email: <a href="mailto:support@streamourtv.site" class="underline">support@streamourtv.site</a></p>
-    </section>
-  </main>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6 max-w-3xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Contact Us</h2>
+    <div class="bg-white p-8 rounded-2xl shadow">
+      <p class="mb-4">For support or inquiries, please contact us at:</p>
+      <p class="font-semibold">Email: <a href="mailto:support@streamourtv.site" class="text-blue-600 hover:underline">support@streamourtv.site</a></p>
+      <p class="mt-2">Business Address: <span class="italic">REPLACE_WITH_YOUR_ADDRESS</span></p>
+      <p class="mt-2">Phone: <span class="italic">REPLACE_WITH_YOUR_PHONE</span></p>
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-purple-700 text-white text-center p-4 mt-6">
-    <p>&copy; 2025 StreamOurTV - All Rights Reserved</p>
+  <footer class="bg-gray-900 text-gray-300 py-8 text-center">
+    <p>&copy; <span id="year"></span> StreamOurTV. All rights reserved.</p>
   </footer>
-</body>
 
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Accordion toggle
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        content.classList.toggle('hidden');
+        btn.querySelector('span').textContent = content.classList.contains('hidden') ? '+' : '-';
+      });
+    });
+  </script>
+</body>
 </html>
